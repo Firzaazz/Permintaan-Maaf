@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permintaan Maaf Simple</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #333;
+      text-align: center;
+      padding: 40px;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    p {
+      font-size: 20px;
+      background: rgba(255,255,255,0.8);
+      padding: 15px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    /* Carousel tengah */
+    .carousel {
+      position: relative;
+      width: 400px;
+      overflow: hidden;
+      margin: 0 auto 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+    .carousel-track img {
+      width: 130px;
+      height: 130px;
+      margin: 0 5px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Foto jatuh */
+    .falling-photos {
+      position: fixed;
+      top: -120px;
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      animation: fallImg 6s linear infinite;
+      z-index: 5;
+    }
+    @keyframes fallImg {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Emoji jatuh */
+    .emoji {
+      position: fixed;
+      top: -50px;
+      font-size: 32px;
+      animation: fall 4s linear infinite;
+      z-index: 10;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    /* Bagian teks kecil bawah */
+    .footer-text {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #222;
+      background: rgba(255,255,255,0.85);
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .gif-wrap {
+      margin-top: 15px;
+    }
+    .gif-wrap img {
+      width: 120px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>🙏 Maaf telah membuatmu kesal 🙏</h1>
+  <p>Aku hanya ingin melihat senyummu yang manis 😊</p>
+
+  <!-- Carousel Foto -->
+  <div class="carousel">
+    <div class="carousel-track" id="track">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFoMCchqKf3GJuAz6m5Lgnk5Ae7hPBCdKjcQ&s" alt="Senyum 1">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLKT_pgTDucrEkMHYPhkThdO1ynmnhnJC9bKjCVhpwZiBBCin9W_KdI2yd09AHhxY04ys&usqp=CAU" alt="Senyum 2">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNuoEGDCrWlb-ED7l2_eTY73Dko35UseqAnYpgEtoMK9q-Rgaj9N2-sMIp0qT7TiSygEQ&usqp=CAU" alt="Senyum 3">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBI4hQ6FgbPvZThZ4KIgdVsjiXlGlnqVmKzqlqkW3tPLaNxnE0hAxpOL4Rlic3pt2-mkg&usqp=CAU" alt="Senyum 4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi7oL4qeN9zgIrE0iasUxmF4ym_my5gz5YusDgT3JgcJuLvVoraFtM8TO7XQu8Xgcr9X8&usqp=CAU" alt="Senyum 5">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJKMH6Upph5IQfY_kx3pXg_bWlPS_Gy_Mtv1IwB2utR_uTkVML4h6h5hk7Ganv8RQ5fPE&usqp=CAU" alt="Senyum 6">
+    </div>
+  </div>
+
+  <!-- Bagian teks kecil bawah -->
+<!-- Bagian teks kecil bawah -->
+<div class="footer-text">
+  <p style="font-size:14px; margin-bottom:8px;">
+    Saya, <b>Firza Azzhara</b>, dengan tulus memohon maaf atas ucapan saya sebelumnya:
+  </p>
+  <ul style="text-align:left; font-size:13px; margin:0 auto; max-width:500px; background:rgba(255,255,255,0.9); padding:10px 15px; border-radius:10px; line-height:1.5;">
+    <li>Menganggap emosimu dipengaruhi oleh perut.</li>
+    <li>Bercanda soal “tidak hoki gacha.”</li>
+  </ul>
+  <p style="font-size:13px; margin-top:8px;">
+    Aku hanya ingin melihat senyummu yang manis seperti di gambar 😅
+  </p>
+</div>
+
+<!-- Tombol ke Google Docs -->
+<div style="margin-top:18px;">
+<a href="https://drive.google.com/uc?export=view&id=102tx00EnZEV0422Un7dLmavmnNEdBbWP" 
+   target="_blank" 
+   style="display:inline-block; padding:9px 16px; background:#ff6b81; color:#fff; font-size:13px; border-radius:8px; text-decoration:none;">
+   📄 Buka PDF Permintaan Maaf
+</a>
+
+</div>
+
+
+  
+
+  <!-- GIF maaf -->
+  <div class="gif-wrap">
+    <img src="https://media.tenor.com/5twLzXBrP2YAAAAM/im-sorry-lignon.gif" alt="GIF Maaf">
+  </div>
+
+  <script>
+    // Carousel logic
+    const track = document.getElementById("track");
+    const images = track.querySelectorAll("img");
+    const imgWidth = 140; // lebar foto + margin
+    let index = 0;
+
+    function moveCarousel() {
+      index++;
+      if (index > images.length - 3) {
+        index = 0;
+      }
+      track.style.transform = `translateX(-${index * imgWidth}px)`;
+    }
+    setInterval(moveCarousel, 2500);
+
+    // Foto jatuh
+    function createFallingPhoto() {
+      const photos = [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-EMkqCsN3PeZLHkDWiSv3ogWcmcW4KsR83Q&s", 
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7LmOhLAVLCXb0gdHWn67ZJt4pW8J3fN1ZtP6yHl3OFX3um0zemFCbcu_qMCUr3Fb1Ils&usqp=CAU", 
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFd7Tu3xSfQU9Mh-bz8mhraUbSFHkuED-CypYIOFRHI0FeCkW4al0JowlTe5uZzMVSDxs&usqp=CAU", 
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtpVcXLpe4eXc-bS_kQVccF7K-ZoXyrIgsnA&s"
+      ];
+      for (let i = 0; i < 2; i++) {
+        const img = document.createElement("img");
+        img.src = photos[Math.floor(Math.random() * photos.length)];
+        img.style.left = Math.random() * 100 + "vw";
+        img.style.animationDuration = (3 + Math.random() * 3) + "s";
+        img.className = "falling-photos";
+        document.body.appendChild(img);
+        setTimeout(() => img.remove(), 7000);
+      }
+    }
+    setInterval(createFallingPhoto, 1000);
+
+    // Emoji jatuh
+    function createEmoji() {
+      const emojiList = ["😊", "🥰", "❤️", "💖", "✨"];
+      const emoji = document.createElement("div");
+      emoji.className = "emoji";
+      emoji.innerText = emojiList[Math.floor(Math.random() * emojiList.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.animationDuration = (3 + Math.random() * 2) + "s";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 5000);
+    }
+    setInterval(createEmoji, 600);
+  </script>
+</body>
+</html>
