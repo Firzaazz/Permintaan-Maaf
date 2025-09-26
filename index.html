@@ -10,53 +10,75 @@
       background: linear-gradient(135deg, #ffdde1, #ee9ca7);
       color: #333;
       text-align: center;
-      padding: 40px;
+      padding: 20px;
       overflow-x: hidden;
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
+
+    /* Animasi Ketik */
+    .typing {
+      width: 28ch;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #fff;
+      animation: typing 4s steps(28) 1s forwards, blink 0.7s step-end infinite;
+      margin: 0 auto 20px;
+      font-size: 22px;
+      font-weight: bold;
       color: #fff;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
-    p {
-      font-size: 20px;
-      background: rgba(255,255,255,0.8);
-      padding: 15px;
-      border-radius: 12px;
-      display: inline-block;
-      margin-bottom: 30px;
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 28ch }
+    }
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #fff }
     }
 
-    /* Carousel tengah */
-    .carousel {
-      position: relative;
-      width: 400px;
-      overflow: hidden;
-      margin: 0 auto 40px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .carousel-track {
-      display: flex;
-      transition: transform 1s ease-in-out;
-    }
-    .carousel-track img {
-      width: 130px;
-      height: 130px;
-      margin: 0 5px;
+    p {
+      font-size: 18px;
+      background: rgba(255,255,255,0.8);
+      padding: 12px;
       border-radius: 12px;
-      object-fit: cover;
-      flex-shrink: 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      display: inline-block;
+      margin-bottom: 20px;
+      max-width: 90%;
     }
+
+    /* Carousel */
+   /* Carousel */
+.carousel {
+  position: relative;
+  max-width: 400px; /* batas fix biar tidak terlalu lebar */
+  width: 90%;       /* tetap fleksibel di mobile */
+  overflow: hidden;
+  margin: 0 auto 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+.carousel-track img {
+  width: 100px;   /* perkecil biar rapih */
+  height: 100px;
+  margin: 0 5px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
 
     /* Foto jatuh */
     .falling-photos {
       position: fixed;
       top: -120px;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 8px;
       object-fit: cover;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
@@ -72,7 +94,7 @@
     .emoji {
       position: fixed;
       top: -50px;
-      font-size: 32px;
+      font-size: 28px;
       animation: fall 4s linear infinite;
       z-index: 10;
     }
@@ -81,70 +103,96 @@
       100% { transform: translateY(100vh); opacity: 0; }
     }
 
-    /* Bagian teks kecil bawah */
+    /* Foto melambai */
+    .waving-photo-left {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-top: 20px;
+      animation: wave 2s infinite;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(15deg); }
+      50% { transform: rotate(-15deg); }
+      75% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    /* Footer teks */
     .footer-text {
-      margin-top: 30px;
-      font-size: 14px;
+      margin-top: 20px;
+      font-size: 13px;
       color: #222;
       background: rgba(255,255,255,0.85);
       padding: 8px 12px;
       border-radius: 8px;
       display: inline-block;
+      max-width: 90%;
     }
 
     .gif-wrap {
       margin-top: 15px;
     }
     .gif-wrap img {
-      width: 120px;
+      width: 100px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
+    @media (min-width: 600px) {
+      .typing { font-size: 28px; }
+      p { font-size: 20px; }
+      .waving-photo-left { width: 120px; height: 120px; }
+      .gif-wrap img { width: 120px; }
     }
   </style>
 </head>
 <body>
-  <h1>🙏 Maaf telah membuatmu kesal 🙏</h1>
+  <div class="typing"> Maaf telah membuatmu kesal 🙏</div>
   <p>Aku hanya ingin melihat senyummu kembali 😊</p>
 
   <!-- Carousel Foto -->
   <div class="carousel">
     <div class="carousel-track" id="track">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFoMCchqKf3GJuAz6m5Lgnk5Ae7hPBCdKjcQ&s" alt="Senyum 1">
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFoMCchqKf3GJuAz6m5Lgnk5Ae7hPBCdKjcQ&s" alt="Senyum 1">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLKT_pgTDucrEkMHYPhkThdO1ynmnhnJC9bKjCVhpwZiBBCin9W_KdI2yd09AHhxY04ys&usqp=CAU" alt="Senyum 2">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNuoEGDCrWlb-ED7l2_eTY73Dko35UseqAnYpgEtoMK9q-Rgaj9N2-sMIp0qT7TiSygEQ&usqp=CAU" alt="Senyum 3">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBI4hQ6FgbPvZThZ4KIgdVsjiXlGlnqVmKzqlqkW3tPLaNxnE0hAxpOL4Rlic3pt2-mkg&usqp=CAU" alt="Senyum 4">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi7oL4qeN9zgIrE0iasUxmF4ym_my5gz5YusDgT3JgcJuLvVoraFtM8TO7XQu8Xgcr9X8&usqp=CAU" alt="Senyum 5">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJKMH6Upph5IQfY_kx3pXg_bWlPS_Gy_Mtv1IwB2utR_uTkVML4h6h5hk7Ganv8RQ5fPE&usqp=CAU" alt="Senyum 6">
+      
     </div>
   </div>
 
   <!-- Bagian teks kecil bawah -->
-<!-- Bagian teks kecil bawah -->
-<div class="footer-text">
-  <p style="font-size:14px; margin-bottom:8px;">
-    Saya, <b>Firza Azzhara</b>, dengan tulus memohon maaf atas ucapan saya sebelumnya:
-  </p>
-  <ul style="text-align:left; font-size:13px; margin:0 auto; max-width:500px; background:rgba(255,255,255,0.9); padding:10px 15px; border-radius:10px; line-height:1.5;">
-    <li>Menganggap emosimu dipengaruhi oleh perut.</li>
-    <li> soal tidak hoki gacha.</li>
-  </ul>
-  <p style="font-size:13px; margin-top:8px;">
-    Aku hanya ingin melihat senyummu yang manis seperti di gambar 😅
-  </p>
-</div>
+  <div class="footer-text">
+    <p style="font-size:14px; margin-bottom:8px;">
+      Saya, <b>Firza Azzhara</b>,  memohon maaf atas ucapan saya sebelumnya:
+    </p>
+    <ul style="text-align:left; font-size:13px; margin:0 auto; max-width:500px; background:rgba(255,255,255,0.9); padding:10px 15px; border-radius:10px; line-height:1.5;">
+      <li>Menganggap emosimu dipengaruhi oleh perut.</li>
+      <li>Bercanda soal “tidak hoki gacha.”</li>
+    </ul>
+    <p style="font-size:13px; margin-top:8px;">
+      Aku hanya ingin melihat senyummu yang manis seperti di gambar 😅
+    </p>
+  </div>
 
-<!-- Tombol ke Google Docs -->
-<div style="margin-top:18px;">
-<a href="https://drive.google.com/uc?export=view&id=102tx00EnZEV0422Un7dLmavmnNEdBbWP" 
-   target="_blank" 
-   style="display:inline-block; padding:9px 16px; background:#ff6b81; color:#fff; font-size:13px; border-radius:8px; text-decoration:none;">
-   📄 Buka PDF Permintaan Maaf
-</a>
+  <!-- Tombol ke Google Docs -->
+  <div style="margin-top:18px;">
+    <a href="https://drive.google.com/uc?export=view&id=102tx00EnZEV0422Un7dLmavmnNEdBbWP" 
+       target="_blank" 
+       style="display:inline-block; padding:9px 16px; background:#ff6b81; color:#fff; font-size:13px; border-radius:8px; text-decoration:none;">
+       📄 Buka PDF Permintaan Maaf
+    </a>
+  </div>
 
-</div>
-
-
-  
+  <!-- Foto Melambai -->
+  <img src="kuroDea.png" alt="Melambai" class="waving-photo-left">
 
   <!-- GIF maaf -->
   <div class="gif-wrap">
@@ -155,7 +203,7 @@
     // Carousel logic
     const track = document.getElementById("track");
     const images = track.querySelectorAll("img");
-    const imgWidth = 140; // lebar foto + margin
+    const imgWidth = 130;
     let index = 0;
 
     function moveCarousel() {
@@ -202,5 +250,3 @@
   </script>
 </body>
 </html>
-
-
